@@ -9,12 +9,12 @@ const line =
   "It jammed on a blank page. There was nothing on the page to jam. " +
   "IT called it user error. I was in the kitchen. " +
   "It has printed 47 test pages this week. I asked for none of them. " +
-  "Now it prints one every time I walk past, like a dog barking at its own reflection. " +
-  "I named it Kevin. Kevin is moving outside. In the rain. Forever.";
+  "Now it prints one every time I walk past. " +
+  "I named it Kevin. Kevin lives outside now. In the rain. Forever.";
 
 const length = [...line].length;
-if (length < 1 || length > 400) {
-  throw new Error(`rant must be 1-400 code points, got ${length}`);
+if (length < 1 || length > 400 || !line.trim()) {
+  throw new Error(`rant must be 1-400 non-blank code points, got ${length}`);
 }
 
 mkdirSync("/output", { recursive: true });
